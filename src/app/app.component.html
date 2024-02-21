@@ -73,7 +73,7 @@
     <div class="products-items">
       <div class="product-item" *ngFor="let product of productsData">
         <div class="product-item-image">
-          <img src="./assets/images/{{product.image}}" alt="{{product.title}}">
+          <img src="{{product.image}}" alt="{{product.title}}">
         </div>
         <h3 class="product-item-title">{{product.title}}</h3>
         <p class="product-iem-text">{{product.text}}</p>
@@ -121,8 +121,8 @@
         <fieldset class="order-form-input"
           [class]="{'error': form.get('customerName')?.invalid && (form.get('customerName')?.dirty || form.get('customerName')?.touched)}">
           <label>
-            <input type="text" placeholder="Ваше имя" aria-label="Ваше имя" id="customerName"
-              formControlName="customerName">
+            <input type="text" placeholder="Ваше имя" aria-label="Ваше имя" id="name"
+              formControlName="name">
           </label>
         </fieldset>
         <fieldset class="order-form-input"
