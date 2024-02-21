@@ -83,7 +83,7 @@
             <div class="product-item-weight">{{product.grams}}</div>
           </div>
           <div class="product-item-action">
-            <button class="button product-button" (click)="scrollTo(order)">
+            <button class="button product-button" (click)="scrollTo(order, product)">
               <span>Заказать</span>
               <span>
                 <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -114,7 +114,8 @@
         <fieldset class="order-form-input"
           [class]="{'error': form.get('order')?.invalid && (form.get('order')?.dirty || form.get('order')?.touched)}">
           <label>
-            <input type="text" placeholder="Ваш заказ" aria-label="Ваш заказ" id="burger" formControlName="order">
+            <input type="text" placeholder="Выберите товар в списке" aria-label="Ваш заказ" id="burger"
+              formControlName="order" readonly>
           </label>
         </fieldset>
         <fieldset class="order-form-input"
