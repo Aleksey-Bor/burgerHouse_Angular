@@ -10,6 +10,9 @@ import { AppService } from './app.service';
 export class AppComponent {
   currency = '$';
 
+  loaderShowed = true;
+  loader = true;
+
   form = this.fb.group({
     order: ['', Validators.required],
     name: ['', Validators.required],
@@ -21,7 +24,14 @@ export class AppComponent {
   constructor(private fb: FormBuilder, private appService: AppService) {}
 
   ngOnInit() {
-    this.appService.getData().subscribe(data => this.productsData = data);
+    setTimeout(() => {
+      this.loaderShowed = false;
+    }, 3000);
+    setTimeout(() => {
+      this.loader = false;
+    }, 4000);
+
+    this.appService.getData().subscribe((data) => (this.productsData = data));
   }
 
   scrollTo(target: HTMLElement, burger?: any) {
@@ -54,17 +64,17 @@ export class AppComponent {
     let coefficient = 1;
 
     if (this.currency === '$') {
-      newCurrency = '₽';
-      coefficient = 93;
-    } else if (this.currency === '₽') {
       newCurrency = 'BYN';
       coefficient = 3.3;
     } else if (this.currency === 'BYN') {
       newCurrency = '€';
-      coefficient = 0.93;
+      coefficient = 0.92;
     } else if (this.currency === '€') {
       newCurrency = '¥';
       coefficient = 7.2;
+    } else if (this.currency === '¥') {
+      newCurrency = '₽';
+      coefficient = 93;
     }
 
     this.currency = newCurrency;
