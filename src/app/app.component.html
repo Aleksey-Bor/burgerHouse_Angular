@@ -33,7 +33,7 @@
             меню</button>
         </div>
       </div>
-      <img src="./assets/images/main_burger.png" alt="Большой бургер" class="main-image">
+      <img src="./assets/images/main_burger.png" alt="Большой бургер" class="main-image" [ngStyle]="mainImageStyle">
     </div>
   </section>
 </main>
@@ -105,7 +105,7 @@
     <h2 class="order-title common-title">
       оформление заказа
     </h2>
-    <img src="./assets/images/order_image.png" alt="Бургер в коробке" class="order-image">
+    <img src="./assets/images/order_image.png" alt="Бургер в коробке" class="order-image" [ngStyle]="orderImageStyle">
     <form class="order-form" action="#" (submit)="confirmOrder($event)">
       <p class="order-form-text">
         Заполните все данные и наш менеджер свяжется с вами для подтверждения заказа
