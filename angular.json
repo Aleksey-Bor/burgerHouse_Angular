@@ -35,16 +35,20 @@
                 {
                   "type": "initial",
                   "maximumWarning": "1mb",
+                  "maximumWarning": "1mb",
                   "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
                   "maximumWarning": "1mb",
                   "maximumError": "1mb"
+                  "maximumWarning": "1mb",
+                  "maximumError": "1mb"
                 }
               ],
               "outputHashing": "all",
-              "baseHref": "/burgers/"
+              "baseHref": "burgers-house"
+              
             },
             "development": {
               "buildOptimizer": false,
